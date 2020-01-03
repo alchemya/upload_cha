@@ -15,6 +15,11 @@ type FileMeta struct{
 
 var fileMetas map[string]FileMeta
 
+func GetAllFiles()map[string]FileMeta{
+	return fileMetas
+}
+
+
 func init(){
 	fileMetas=make(map[string]FileMeta)
 }
@@ -26,17 +31,18 @@ func UpdateFileMeta(fmeta FileMeta){
 }
 
 
-
 func GetFileMeta(fileSha1 string)FileMeta{
 	return fileMetas[fileSha1]
 }
 
 
+
 //删除信息
 func RemoveFileMeta(fileSha1 string){
 	delete(fileMetas,fileSha1)
-
 }
+
+
 
 
 
